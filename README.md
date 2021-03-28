@@ -22,7 +22,7 @@ Error while adding your message.
 
 * Для чтения файлов используется функция [file()](https://www.php.net/manual/en/function.file.php "PHP: file - Manual").
 
-* Для записи файлов используется функция [file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php "PHP: file_put_contents - Manual").
+* Для записи файлов используется последовательный успешных вызов функций fopen(), fwrite() и fclose().
 
 * При отображении сообщений из гостевой книги все текстовые данные перед выводом обрабатываются функцией [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php "PHP: htmlspecialchars - Manual"). Эта функция преобразует специальные символы HTML в их эквиваленты HTML (например, < будет преобразованно в &_lt;).
 Что не позволяет злоумышленникам выполнить произвольный HTML-код в приложении.
