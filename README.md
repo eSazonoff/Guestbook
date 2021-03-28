@@ -24,7 +24,7 @@ Error while adding your message.
 
 * Для записи файлов используется функция [file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php "PHP: file_put_contents - Manual").
 
-* При отображении сообщений из гостевой книги все текстовые данные перед выводом обрабатываются функцией [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php "PHP: htmlspecialchars - Manual"). Эта функция преобразует специальные символы HTML в их эквиваленты HTML (for example, < will be replaced by &_lt;).
+* При отображении сообщений из гостевой книги все текстовые данные перед выводом обрабатываются функцией [htmlspecialchars()](https://www.php.net/manual/en/function.htmlspecialchars.php "PHP: htmlspecialchars - Manual"). Эта функция преобразует специальные символы HTML в их эквиваленты HTML (например, < будет преобразованно в &_lt;).
 Что не позволяет злоумышленникам выполнить произвольный HTML-код в приложении.
 
 * Адрес электронной почты отображается в виде ссылки (адрес ссылки имеет формат: mailto:$email, где $email - это адрес электронной почты автора сообщения).
