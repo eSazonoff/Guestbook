@@ -19,11 +19,11 @@
 
         $name = $arrTextMessage[0]; // 1-я строка файла - имя автора сообщения
         $mail = $arrTextMessage[1]; // 2-я строка - email автора сообщения
-        echo $name .'<br/>';
+        echo htmlspecialchars($name).'<br/>'; //htmlspecialchars — преобразует специальные символы в HTML-сущности
         echo "<a href='mailto:$mail'>$mail</a>".'<br/>';
 
         for ($j = 2; $j < count($arrTextMessage); $j++) { //3-я и последующие строки - текст сообщения
-        	echo $arrTextMessage[$j];
+        	echo htmlspecialchars($arrTextMessage[$j]); //htmlentities
         	echo '<br/>';
         }
     }
@@ -45,9 +45,9 @@
 		$textNewFile = "$name1\n$email1\n$message1";
 		file_put_contents($newFile, $textNewFile); //файл будет создан, если его нет; запись данных в указанный файл
 
-		echo $name1 .'<br/>';
+		echo htmlspecialchars($name1).'<br/>';
         echo "<a href='mailto:$email1'>$email1</a>".'<br/>';
-        echo $message1 .'<br/>';
+        echo htmlspecialchars($message1) .'<br/>';
 	} else {
 		echo 'Error while adding your message!';
 	}
