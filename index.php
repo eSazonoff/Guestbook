@@ -41,13 +41,13 @@
 //Отправка нового сообщения
 	if ($name1 && $email1 && $message1 && filter_var($email1, FILTER_VALIDATE_EMAIL)) { // возвращает отфильтрованные данные или false, если фильтрация завершилась неудачей.
 		$time = date('d.m.Y_h.i.s'); //вывод системной даты/времени
-		$file=fopen("messages\/$time.txt", "a+t");
-		fwrite($file, "$name1\n $email1\n $message1");
-		fclose($file);
+		$newFile = "messages/$time.txt";
+		$textNewFile = "$name1\n$email1\n$message1";
+		file_put_contents($newFile, $textNewFile); //файл будет создан, если его нет; запись данных в указанный файл
 
 		echo htmlspecialchars($name1).'<br/>';
-     	echo "<a href='mailto:$email1'>$email1</a>".'<br/>';
-     	echo htmlspecialchars($message1) .'<br/>';
+        echo "<a href='mailto:$email1'>$email1</a>".'<br/>';
+        echo htmlspecialchars($message1) .'<br/>';
 	} else {
 		echo 'Error while adding your message!';
 	}
