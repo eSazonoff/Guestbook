@@ -16,7 +16,7 @@
 //Данные формы принимаютя до отображения сообщения. Значит получая новое сообщение, сперва сохраняем его, а потом выводим все сообщения из папки, включая новые.
 
 //Проверка данных получаемых формой
-if (isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$author = isset($_POST['author']) ? trim($_POST['author']) : ''; //удаляем пробелы из строки, иначе пустая строка
 	$email = isset($_POST['email']) ? trim($_POST['email']) : '';
 	$message = isset($_POST['message']) ? trim($_POST['message']) : '';
